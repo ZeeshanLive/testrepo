@@ -16,8 +16,8 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '/var/opt/_work/s/'
-    Contents: '**'
-    TargetFolder: '/var/www/html/'
+# - task: CopyFiles@2
+#   inputs:
+#     SourceFolder: '/var/opt/_work/s/'
+#     Contents: '**'
+#     TargetFolder: '/var/www/html/'
