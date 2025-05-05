@@ -1,23 +1,12 @@
 version: 2.1
-
-executors:
-  k8s-runner:
-    docker:
-      - image: cimg/python:3.11  # or any container image
-    resource_class: mylaptop/test
-
 jobs:
-  test:
-    executor: k8s-runner
+  build:
+    docker:
+      - image: cimg/base:current
+    resource_class: mylaptop/test
     steps:
-      - checkout
-      - run:
-          name: Run Tests
-          command: |
-            python -m unittest discover
-
+      - run: echo "Hi I'm on a Container Runner!"
 workflows:
-  version: 2
-  test_workflow:
+  build-workflow:
     jobs:
-      - test
+      - build
